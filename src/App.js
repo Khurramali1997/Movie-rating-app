@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+//import { render } from "react-dom";
+import { Routes, Route } from "react-router-dom";
+import Navs from "./components/Navs";
+import Home from "./Pages/Home";
+import Starred from "./Pages/Starred";
+import Error from "./Pages/Error";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navs></Navs>
+      <Routes>
+        <Route exact path="/">
+          <Route exact path="/" element={<Home />}>
+            Home Page
+          </Route>
+        </Route>
+        <Route exact path="/Starred">
+          <Route exact path="/Starred" element={<Starred />}>
+            Starred Page
+          </Route>
+        </Route>
+        <Route element={<Error />}>Error for invalid routes</Route>
+      </Routes>
     </div>
   );
 }
