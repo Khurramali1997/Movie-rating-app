@@ -6,7 +6,7 @@ function MainPage({ children }) {
   return (
     <div>
       <Title
-        title={"MOVIES"}
+        title={"DELTA"}
         subtitle="Your personal movie and actors search engine"
       ></Title>
       <Navs></Navs>
