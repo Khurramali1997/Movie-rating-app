@@ -1,7 +1,7 @@
 import "./App.css";
 //import { render } from "react-dom";
 import { Routes, Route } from "react-router-dom";
-import Navs from "./components/Navs";
+//import Navs from "./components/Navs";
 import Home from "./Pages/Home";
 import Starred from "./Pages/Starred";
 import Error from "./Pages/Error";
@@ -9,7 +9,6 @@ import Error from "./Pages/Error";
 function App() {
   return (
     <div>
-      <Navs></Navs>
       <Routes>
         <Route exact path="/">
           <Route exact path="/" element={<Home />}>
@@ -21,7 +20,9 @@ function App() {
             Starred Page
           </Route>
         </Route>
-        <Route element={<Error />}>Error for invalid routes</Route>
+        <Route path="/error" element={<Error />}>
+          Error for invalid routes
+        </Route>
       </Routes>
     </div>
   );
